@@ -2,6 +2,11 @@
 /shelf/
 /workspace.xml
 
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
