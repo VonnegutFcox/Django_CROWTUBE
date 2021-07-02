@@ -1,0 +1,16 @@
+<nav class="navbar navbar-dark" style="background-color: #2E3333;">
+    <a class="navbar-brand" href="/"><span style="color: #A6A6A6;"><b>Crow</b></span>Tube</a>
+    <nav class="my-2 my-md-0 mr-md-3">
+        {% if user.is_authenticated %}
+        <a class="p-2 text-light" href="{% url 'posts:profile' username=user.username %}">
+                Пользователь: {{ user.username }}.
+        </a>
+        <a class="p-2 text-light" href="{% url 'posts:new_post' %}">Новая запись</a>
+        <a class="p-2 text-light" href="{% url 'password_change' %}">Изменить пароль</a>
+        <a class="p-2 text-light" href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+        <a class="p-2 text-light" href="{% url 'login' %}">Войти</a> |
+        <a class="p-2 text-light" href="{% url 'signup' %}">Регистрация</a>
+        {% endif %}
+    </nav>
+</nav>
